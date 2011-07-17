@@ -9,6 +9,10 @@ class sshd::setup {
   }	
   
   package {"openssh":
-    ensure => installed
+    name   => $operatingsystem ? {
+      Debian  => 'openssh-server',
+      default => 'openssh',
+    }
+    ensure => installed,
   }
 }
