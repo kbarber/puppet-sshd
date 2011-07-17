@@ -12,7 +12,7 @@ class sshd::setup {
     name   => $operatingsystem ? {
       Debian  => 'openssh-server',
       default => 'openssh',
-    }
+    },
     ensure => installed,
   }
 }
