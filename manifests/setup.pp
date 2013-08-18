@@ -5,10 +5,10 @@ class sshd::setup {
     ensure => running,
     hasrestart => true,
     hasstatus => true,
-    require => Package["openssh"]
+    require => Package["openssh-server"]
   }	
   
-  package {"openssh":
+  package {"openssh-server":
     ensure => installed
   }
 }
